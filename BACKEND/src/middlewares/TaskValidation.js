@@ -22,8 +22,7 @@ const TaskValidation = async (req, res, next) => {
     else{
         let taskExists;
         if(req.params.id){ //validção de existência de tarefa para casos em que o id é passado como parâmetro na requisição
-            /*para casos de update, 
-            é importante validarmos duplicidade de horário para somente as tarefas que não vão ser atualizadas
+            /*para casos de update, é importante validarmos duplicidade de horário para somente as tarefas que não vão ser atualizadas
             pois de outro modo não poderiamos atualizar uma tarefa mantendo o mesmo horário*/
             taskExists = await TaskModel.
                 findOne({

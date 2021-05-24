@@ -1,4 +1,4 @@
-//requirindo no módulo de database o mongoose já conectado
+//requerendo no módulo de database o mongoose já conectado
 const mongoose = require('../config/database');
 const Schema = mongoose.Schema;
 
