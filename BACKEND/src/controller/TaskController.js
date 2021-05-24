@@ -38,7 +38,7 @@ class TaskController{
 
     //retorna todas as tarefas para um determindado dispositivo(macaddress)
     async all(req, res){
-        await TaskModel.find({macaddress: {'$in': req.body.macaddress}})
+        await TaskModel.find({macaddress: {'$in': req.params.macaddress}})
             .sort('when')
             .then(response => {
                 return res.status(200).json(response); //devolve as tarefas em json
@@ -92,7 +92,7 @@ class TaskController{
     async late(req, res){
         await TaskModel.find({
             'when': {'$lt': current},
-            'macaddress': {'$in': req.body.macaddress}
+            'macaddress': {'$in': req.params.macaddress}
         })
         .sort('when')
         .then(response => {
@@ -106,7 +106,7 @@ class TaskController{
 
     async today(req, res){
         await TaskModel.find({
-            'macaddress': {'$in': req.body.macaddress},
+            'macaddress': {'$in': req.params.macaddress},
             'when': {'$gte': startOfDay(current), '$lt': endOfDay(current)} //gte maior ou igual que
         })
         .sort('when')
@@ -121,7 +121,7 @@ class TaskController{
 
     async week(req, res){
         await TaskModel.find({
-            'macaddress': {'$in': req.body.macaddress},
+            'macaddress': {'$in': req.params.macaddress},
             'when': {'$gte': startOfWeek(current), '$lt': endOfWeek(current)} //gte maior ou igual que
         })
         .sort('when')
@@ -136,7 +136,7 @@ class TaskController{
 
     async month(req, res){
         await TaskModel.find({
-            'macaddress': {'$in': req.body.macaddress},
+            'macaddress': {'$in': req.params.macaddress},
             'when': {'$gte': startOfMonth(current), '$lt': endOfMonth(current)} //gte maior ou igual que
         })
         .sort('when')
@@ -151,7 +151,7 @@ class TaskController{
 
     async year(req, res){
         await TaskModel.find({
-            'macaddress': {'$in': req.body.macaddress},
+            'macaddress': {'$in': req.params.macaddress},
             'when': {'$gte': startOfYear(current), '$lt': endOfYear(current)} //gte maior ou igual que
         })
         .sort('when')
