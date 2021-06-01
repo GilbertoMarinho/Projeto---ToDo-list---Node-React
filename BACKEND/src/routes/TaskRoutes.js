@@ -3,7 +3,7 @@ const router = express.Router();
 
 const TaskController = require('../controller/TaskController');
 const TaskValidation = require('../middlewares/TaskValidation');
-const= require('../middlewares)
+
 
 /*Exemplo de validação: Ao acessar a raiz de /task(verificar index), é executado em ordem:
 1º TaskValidation que valida os dados do body da requisição
