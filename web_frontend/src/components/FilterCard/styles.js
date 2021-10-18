@@ -5,7 +5,7 @@ export const Container = styled.div`
     height: 60px;
     background: ${props => props.actived ? '#EE6B26' : '#20295f'}; //verifica a propriedade actived que é passada como parâmetro
     padding: 10px;
-    cursor: pointer; //mudar cursos para mãozinha de click
+    cursor: pointer; //mudar cursor para mãozinha de click
 
     border-radius: 5px;
     

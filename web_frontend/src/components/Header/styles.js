@@ -43,9 +43,12 @@ export const RightSide = styled.div`
 
     //selector id notification logo bell 
     #notification{ 
+        background: none;
+        border: none;
+        cursor: pointer;
         img{
-        width: 25px;
-        height: 30px;
+            width: 25px;
+            height: 30px;
         }
 
         span {
